@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils"
-import { ChartPie, Home, LayoutPanelLeft, MessageCircleMore, Newspaper } from "lucide-react"
+
 import { Link, useLocation } from "react-router-dom"
+import { links } from "./links"
 
 const Sidebar = () => {
     const pathname = useLocation().pathname
@@ -21,31 +22,3 @@ const Sidebar = () => {
 }
 
 export default Sidebar
-
-const links = [
-    {
-        title: "Dashboard",
-        href: '/',
-        icon: <Home />
-    },
-    {
-        title: 'Applications',
-        href: "/applications",
-        icon: <LayoutPanelLeft />
-    },
-    {
-        title: 'Chat',
-        href: '/chat',
-        icon: <MessageCircleMore />
-    },
-    {
-        title: "Statistics",
-        href: '/statistics',
-        icon: <ChartPie />
-    },
-    {
-        title: 'News',
-        href: "/news",
-        icon: <Newspaper />
-    }
-]

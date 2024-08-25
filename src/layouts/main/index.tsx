@@ -8,7 +8,9 @@ const Main = () => {
       <Sidebar />
       <div className="w-full h-full bg-[#FAFBFF] min-h-screen rounded-tl-xl px-7">
         <Header />
-        <Outlet />
+        <div className="pt-7">
+          <Outlet />
+        </div>
       </div>
     </div>
 

@@ -5,7 +5,7 @@ import { RouteObject } from "react-router-dom";
 const Main = lazy(() => import("../layouts/main"))
 
 const Home = lazy(() => import("../pages/home"))
-const Applications = lazy(() => import("../pages/applications"))
+const Employees = lazy(() => import("../pages/employees"))
 const Chat = lazy(() => import("../pages/chat"))
 const Statistics = lazy(() => import("../pages/statistics"))
 const News = lazy(() => import("../pages/news"))
@@ -21,8 +21,8 @@ export const routes: RouteObject[] = [
                 element: <Home />
             },
             {
-                path: "applications",
-                element: <Applications />
+                path: "employees",
+                element: <Employees />
             },
             {
                 path: "chat",
