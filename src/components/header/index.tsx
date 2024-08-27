@@ -10,8 +10,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
 const Header = ({ open, setOpen }: { open: boolean, setOpen: (val: boolean) => void }) => {
     const pathname = useLocation().pathname
     return (
-        <header className="border-b-2 border-[#38445599] w-[calc(100%+56px)] -ml-7 px-7 py-4 flex items-center gap-16 justify-between">
-            <div className="flex items-center w-[50%] max-w-[900px] justify-between">
+        <header className="border-b-2 border-[#38445599] px-7 py-4 flex items-center gap-16 justify-between">
+            <div className="flex items-center gap-6 w-[50%] max-w-[900px] justify-between">
                 <Button size='icon' variant='ghost' onClick={() => setOpen(!open)}>
                     <ArrowLeftRight className="text-[#38445599]" strokeWidth={2.5} />
                 </Button>
