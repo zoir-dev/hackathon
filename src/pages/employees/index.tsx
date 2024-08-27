@@ -12,12 +12,9 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import {
-  Github,
-  LogOut,
-  User,
-} from "lucide-react"
+import { Github, LogOut, User } from "lucide-react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Badge } from "@/components/ui/badge"
 
 const Employees = () => {
   const employeesData = Array.from({ length: 30 }, (_, index) => ({
@@ -48,10 +45,11 @@ const Employees = () => {
           {employeesData.map(
             ({ employeeName, jobRole, status, telId, employeeImg }, idx) => (
               <Card key={idx}>
-                <CardHeader>
+                <CardHeader className="flex-row items-center justify-between">
+                  <Badge>{status}#{idx}</Badge>
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <Button variant="ghost" className="text-gray-400">
+                      <Button variant="ghost" className="text-gray-400 flex h-8 w-8 p-0 data-[state=open]:bg-muted">
                         <Iconify
                           className="h-4 w-4"
                           icon="solar:menu-dots-bold"
@@ -99,17 +97,15 @@ const Employees = () => {
                       className="w-24 h-24 rounded-full mb-4"
                     />
                   </div>
-                  <Button variant="outline" className="mt-4">
-                    View
-                  </Button>
+                  <Button className="w-full mt-4">View</Button>
                 </CardContent>
-                <CardFooter className="flex items-center justify-between border-t-2">
+                <CardFooter className="flex items-center justify-between pt-4 border-t-2">
                   <Avatar>
                     <AvatarImage src="https://github.com/shadcn.png" />
                     <AvatarFallback>CN</AvatarFallback>
                   </Avatar>
 
-                  <div className="flex items-center gap-4 text-gray-600">
+                  <div className="flex items-center gap-4 text-gray-600 text-bold">
                     <Iconify icon="solar:calendar-outline" />
                     <span>02 May 23</span>
                   </div>
