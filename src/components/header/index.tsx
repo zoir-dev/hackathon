@@ -7,15 +7,15 @@ import { useLocation } from "react-router-dom"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../ui/dropdown-menu"
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
 
-const Header = () => {
+const Header = ({ open, setOpen }: { open: boolean, setOpen: (val: boolean) => void }) => {
     const pathname = useLocation().pathname
     return (
         <header className="border-b-2 border-[#38445599] w-[calc(100%+56px)] -ml-7 px-7 py-4 flex items-center gap-16 justify-between">
             <div className="flex items-center w-[50%] max-w-[900px] justify-between">
-                <Button size='icon' variant='ghost'>
+                <Button size='icon' variant='ghost' onClick={() => setOpen(!open)}>
                     <ArrowLeftRight className="text-[#38445599]" strokeWidth={2.5} />
                 </Button>
-                <h2 className="text-[#384455] text-3xl font-bold">{links.find((link) => link.href === pathname)?.title}</h2>
+                {!open && <h2 className="text-[#384455] text-3xl font-bold">{links.find((link) => link.href === pathname)?.title}</h2>}
                 <div className="max-w-[460px] w-full">
                     <Input type="search" placeholder="Search..." fullWidth className="h-12" />
                 </div>

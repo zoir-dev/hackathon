@@ -1,9 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as React from "react"
 import {
   Form,
   FormItem,
   FormField,
-  FormLabel,
   FormControl,
   FormMessage,
 } from "@/components/ui/form"
@@ -15,40 +15,23 @@ import {
   SelectContent,
   SelectGroup,
 } from "@/components/ui/select"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover"
-import { cn } from "@/lib/utils"
-import { format } from "date-fns"
 import { FormData } from "@/types"
 import { useForm } from "react-hook-form"
 import { filterSchema } from "@/lib/schema"
 import Iconify from "@/components/iconify"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { Calendar } from "@/components/ui/calendar"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { motion, AnimatePresence } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { DatePicker } from "@/components/ui/date-picker"
 
-const initialState = {
-  search: "",
-  dateTo: new Date(),
-  dateFrom: new Date(),
-  employee: "",
-  employeeName: "",
-  department: "",
-  phone: "",
-}
 
 function Actions() {
   const [isOpen, setIsOpen] = React.useState(false)
 
   const form = useForm<FormData>({
-    resolver: zodResolver(filterSchema),
-    defaultValues: initialState,
+    resolver: zodResolver(filterSchema)
   })
 
   const toggleFilter = () => {
@@ -69,7 +52,7 @@ function Actions() {
         onSubmit={form.handleSubmit(onSubmit, onError)}
         className="grid gap-4"
       >
-        <div className="flex items-center justify-between">
+        <div className="flex items-center gap-4 justify-center">
           <FormField
             control={form.control}
             name="employeeName"
@@ -87,41 +70,7 @@ function Actions() {
             name="dateFrom"
             render={({ field }) => (
               <FormItem className="flex flex-col">
-                <FormLabel>Date from</FormLabel>
-                <Popover>
-                  <PopoverTrigger asChild>
-                    <FormControl>
-                      <Button
-                        variant={"outline"}
-                        className={cn(
-                          "w-[200px] pl-3 text-left font-normal",
-                          !field.value && "text-muted-foreground"
-                        )}
-                      >
-                        {field.value ? (
-                          format(field.value, "PPP")
-                        ) : (
-                          <span>Pick a date</span>
-                        )}
-                        <Iconify
-                          icon="solar:calendar-minimalistic-outline"
-                          className="ml-auto h-4 w-4 opacity-50"
-                        />
-                      </Button>
-                    </FormControl>
-                  </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0" align="start">
-                    <Calendar
-                      mode="single"
-                      selected={field.value}
-                      onSelect={field.onChange}
-                      disabled={(date) =>
-                        date > new Date() || date < new Date("1900-01-01")
-                      }
-                      initialFocus
-                    />
-                  </PopoverContent>
-                </Popover>
+                <DatePicker placeholder="Pick a date" date={field.value} setDate={field.onChange} />
                 <FormMessage />
               </FormItem>
             )}
@@ -131,41 +80,7 @@ function Actions() {
             name="dateTo"
             render={({ field }) => (
               <FormItem className="flex flex-col">
-                <FormLabel>Date to</FormLabel>
-                <Popover>
-                  <PopoverTrigger asChild>
-                    <FormControl>
-                      <Button
-                        variant={"outline"}
-                        className={cn(
-                          "w-[200px] pl-3 text-left font-normal",
-                          !field.value && "text-muted-foreground"
-                        )}
-                      >
-                        {field.value ? (
-                          format(field.value, "PPP")
-                        ) : (
-                          <span>Pick a date</span>
-                        )}
-                        <Iconify
-                          icon="solar:calendar-minimalistic-outline"
-                          className="ml-auto h-4 w-4 opacity-50"
-                        />
-                      </Button>
-                    </FormControl>
-                  </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0" align="start">
-                    <Calendar
-                      mode="single"
-                      selected={field.value}
-                      onSelect={field.onChange}
-                      disabled={(date) =>
-                        date > new Date() || date < new Date("1900-01-01")
-                      }
-                      initialFocus
-                    />
-                  </PopoverContent>
-                </Popover>
+                <DatePicker placeholder="Pick a date" date={field.value} setDate={field.onChange} />
                 <FormMessage />
               </FormItem>
             )}
@@ -209,9 +124,8 @@ function Actions() {
           />
           <Button onClick={toggleFilter} className="flex items-center">
             <Iconify
-              icon={`solar:${
-                isOpen ? "alt-arrow-up-outline" : "alt-arrow-down-outline"
-              }`}
+              icon={`solar:${isOpen ? "alt-arrow-up-outline" : "alt-arrow-down-outline"
+                }`}
               className="ml-auto h-2 w-2"
             />
             Filter
