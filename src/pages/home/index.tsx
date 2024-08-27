@@ -1,5 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Blocks from "./components/blocks"
-import Personal from "./components/personal"
 
 const Dashboard: React.FC = () => {
   const blocksData = [
@@ -32,7 +32,7 @@ const Dashboard: React.FC = () => {
     <>
       <div className="grid grid-cols-2 md:grid-cols-4 items-baseline gap-6">
         {blocksData.map((item, idx) => (
-          <Blocks key={idx} item={item} />
+          <Blocks key={idx} item={item as any} />
         ))}
       </div>
       {/* <div>

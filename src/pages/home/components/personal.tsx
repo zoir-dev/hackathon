@@ -8,43 +8,43 @@ import {
 import { RadialChart } from "./radial-chart"
 
 function Personal() {
-  const activityData = [
-    {
-      desc: "Your application has accepted in 3 Vacancy",
-      icon: "",
-      time: "",
-    },
-    {
-      desc: "Your application has accepted in 3 Vacancy",
-      icon: "",
-      time: "",
-    },
-    {
-      desc: "Your application has accepted in 3 Vacancy",
-      icon: "",
-      time: "",
-    },
-    {
-      desc: "Your application has accepted in 3 Vacancy",
-      icon: "",
-      time: "",
-    },
-    {
-      desc: "Your application has accepted in 3 Vacancy",
-      icon: "",
-      time: "",
-    },
-    {
-      desc: "Your application has accepted in 3 Vacancy",
-      icon: "",
-      time: "",
-    },
-    {
-      desc: "Your application has accepted in 3 Vacancy",
-      icon: "",
-      time: "",
-    },
-  ]
+  // const activityData = [
+  //   {
+  //     desc: "Your application has accepted in 3 Vacancy",
+  //     icon: "",
+  //     time: "",
+  //   },
+  //   {
+  //     desc: "Your application has accepted in 3 Vacancy",
+  //     icon: "",
+  //     time: "",
+  //   },
+  //   {
+  //     desc: "Your application has accepted in 3 Vacancy",
+  //     icon: "",
+  //     time: "",
+  //   },
+  //   {
+  //     desc: "Your application has accepted in 3 Vacancy",
+  //     icon: "",
+  //     time: "",
+  //   },
+  //   {
+  //     desc: "Your application has accepted in 3 Vacancy",
+  //     icon: "",
+  //     time: "",
+  //   },
+  //   {
+  //     desc: "Your application has accepted in 3 Vacancy",
+  //     icon: "",
+  //     time: "",
+  //   },
+  //   {
+  //     desc: "Your application has accepted in 3 Vacancy",
+  //     icon: "",
+  //     time: "",
+  //   },
+  // ]
   const programmerData = [
     {
       title: "php",

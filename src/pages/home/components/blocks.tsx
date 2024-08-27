@@ -6,7 +6,7 @@ type BlocksProps = {
     title: string
     icon: string
     value: number
-    color: string
+    color: 'indigo' | 'sky' | 'emerald' | 'lime'
   }
 }
 const slectedColours = {

@@ -1,4 +1,3 @@
-"use client"
 
 import {
   Label,
@@ -28,7 +27,9 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export function RadialChart({data}) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function RadialChart({ data }: { data: any }) {
+  console.log(data)
   return (
     <Card className="flex flex-col">
       <CardContent className="flex-1 pb-0">
@@ -86,7 +87,7 @@ export function RadialChart({data}) {
       </CardContent>
       <CardFooter className="flex-col gap-2 text-sm">
         <div className="leading-none text-muted-foreground">
-         {title}
+          asdfasdf
         </div>
       </CardFooter>
     </Card>

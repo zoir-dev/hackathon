@@ -1,4 +1,3 @@
-import React from 'react';
 import { cn } from '@/lib/utils';
 
 interface OwnerState {
@@ -18,7 +17,7 @@ const StyledLabel: React.FC<StyledLabelProps> = ({
   className,
   ownerState,
 }) => {
-  
+
   const filledColours = {
     error: 'bg-red-600 text-white',
     info: 'bg-cyan-600 text-white',
@@ -26,7 +25,7 @@ const StyledLabel: React.FC<StyledLabelProps> = ({
     warning: 'bg-amber-600 text-white',
     success: 'bg-green-600 text-white',
   };
-  
+
   const defaultColours = {
     error: 'bg-red-200 text-red-500',
     info: 'bg-cyan-200 text-cyan-500',
@@ -61,8 +60,8 @@ const StyledLabel: React.FC<StyledLabelProps> = ({
     ownerState.variant === 'soft'
       ? defaultColours[ownerState.color]
       : ownerState.variant === 'outlined'
-      ? outlinedColours[ownerState.color]
-      : ownerState.variant === 'filled' && filledColours[ownerState.color]
+        ? outlinedColours[ownerState.color]
+        : ownerState.variant === 'filled' && filledColours[ownerState.color]
   );
 
   return <div className={classes}>{children}</div>;
